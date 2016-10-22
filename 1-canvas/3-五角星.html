@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			#canvas{
+				border: 1px solid black;
+				background: red;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="500" height="500">
+			您的浏览器不支持canvas
+		</canvas>
+		
+	</body>
+	<script type="text/javascript">
+		
+		// 获取元素
+		var canvas = document.getElementById("canvas");
+		
+		var ctx = canvas.getContext("2d");
+		
+		ctx.beginPath();
+		
+		ctx.moveTo(50, 200);
+		
+		ctx.lineTo(450, 200);
+		ctx.lineTo(100, 450);
+		ctx.lineTo(250, 50);
+		ctx.lineTo(400, 450);
+		
+		ctx.lineWidth = 20;
+		ctx.fillStyle = "yellow";
+		ctx.closePath();
+		
+		ctx.fill();
+		
+		
+		ctx.beginPath();
+		
+		ctx.moveTo(200,230);
+		ctx.lineTo(300,230);
+		ctx.lineTo(300, 280);
+		ctx.lineTo(200, 280);
+		
+		ctx.strokeStyle = "darkblue";
+		ctx.lineWidth = 10;
+		ctx.closePath();
+		ctx.stroke();
+		
+		
+	</script>
+</html>

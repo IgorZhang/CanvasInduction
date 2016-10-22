@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#canvas{
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="500" height="500"></canvas>
+		
+	</body>
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+		
+		// 获取canvas的宽度和高度
+		var canvasWidth = canvas.width;
+		var canvasHeight = canvas.height;
+		
+		ctx.fillStyle = "yellow";
+		ctx.fillRect(0,0, 100,100);
+		
+		// 将坐标系移动在S轴和Y轴移动100
+		ctx.translate(100,100);
+		// 绘制的内容，根据坐标系来
+		ctx.fillStyle = "red";
+		ctx.fillRect(0,0, 100,100);
+		
+		ctx.translate(100,100);
+		// 绘制的内容，根据坐标系来
+		ctx.fillStyle = "green";
+		ctx.fillRect(0,0, 100,100);
+		
+		
+		// 旋转
+		ctx.rotate(45);
+		ctx.fillStyle = "blue";
+		ctx.fillRect(0,0, 100,100);
+		
+		// 缩放
+		ctx.scale(2,1);
+		ctx.strokeStyle = "brown";
+		ctx.strokeRect(0,0, 100,100);
+	
+		
+	</script>
+</html>

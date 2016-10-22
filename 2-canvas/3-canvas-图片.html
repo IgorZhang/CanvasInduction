@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#canvas{
+				width: 100px;
+				height: 100px;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="500" height="500"></canvas>
+		
+	</body>
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+		
+		// 获取canvas的宽度和高度
+		var canvasWidth = canvas.width;
+		var canvasHeight = canvas.height;
+		
+		// 创建图片对象
+		var img = new Image();
+		img.src = "1.jpg";
+		// 当图片加载完毕之后，才把图片绘制到canvas中
+		img.onload = function () {
+			ctx.drawImage(img, 10, 10);
+			
+			// 清楚画布中的内容
+			ctx.clearRect(100,100,100,100);
+		};
+	
+		
+	</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#canvas{
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="400" height="400">
+			不支持canvas
+		</canvas>
+		
+	</body>
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+		
+		var ctx = canvas.getContext("2d");
+		
+		// 绘制矩形
+//		ctx.strokeRect(100,100,100,100);
+//		
+//		ctx.fillStyle = "pink";
+//		ctx.fillRect(210,210,100,100);
+
+		// 绘制圆形
+//		ctx.arc(200, 200, 100, 0, Math.PI, true);
+//		ctx.stroke();
+		
+//		console.log(Math.PI);
+//		ctx.arc(200, 200, 100, Math.PI, Math.PI * 1.5, false);
+//		ctx.stroke();
+
+		function random () {
+			return parseInt(Math.random() * 255);
+		}
+
+		for( var i = 10; i > 0 ; i--){
+			ctx.beginPath();
+			ctx.arc(200, 200, 20 * i, 0, Math.PI * 2, true);
+			ctx.fillStyle = "rgb(" + random() + "," + random() + "," +random() + ")";
+			ctx.fill();
+			ctx.stroke();
+		}
+		
+	</script>
+	
+</html>

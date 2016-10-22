@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#canvas{
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="500" height="500"></canvas>
+		
+	</body>
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+		
+		var canvasWidth = canvas.offsetWidth;
+		var canvasHeight = canvas.offsetHeight;
+		
+		// 创建小球对象
+		var ball = {
+			x : 100,
+			y : 100,
+			r : 50,
+			speedX : 3,
+			speedY : 2,
+			draw : function () {
+				ctx.beginPath();
+				ctx.arc(this.x, this.y, this.r, 0 ,Math.PI*2, true);
+				ctx.fill();
+			},
+			move : function () {
+				this.x += this.speedX;
+				this.y += this.speedY;
+				
+				if (this.x + this.r >= canvasWidth || this.x - this.r <= 0) {
+					this.speedX *= -1;
+				}
+				if (this.y + this.r >= canvasHeight || this.y - this.r <= 0) {
+					this.speedY *= -1;
+				}
+				
+				this.draw();
+			}
+		}
+		
+		// 使用定时器，让小球进行移动
+//		setInterval(function () {
+//			ctx.clearRect(0,0,500,500)
+//			ball.move();
+//		},5)
+
+		function gameloop () {
+			ctx.clearRect(0,0,500,500);
+			ball.move();
+			// 每一帧执行一次gameloop
+			window.requestAnimationFrame(gameloop);
+		}
+		gameloop();
+	
+		
+	</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#canvas{
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="500" height="500"></canvas>
+		
+	</body>
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+		
+		// 获取canvas的宽度和高度
+		var canvasWidth = canvas.width;
+		var canvasHeight = canvas.height;
+		
+		console.log(canvasWidth, canvasHeight)
+		
+		ctx.strokeRect(100,100,100,100);
+		
+		// 设置字体
+		ctx.font = "50px 宋体"
+		// 设置水平对其方式
+		ctx.textAlign = "center";
+		// 设置垂直对齐方式
+		ctx.textBaseline = "middle"
+		
+		// 绘制文字
+		ctx.fillText("今天要是啊",100,100);
+		
+		
+//		让文字水平垂直居中
+		ctx.font = "40px 楷体"
+		ctx.textAlign = "center";
+		ctx.textBaseline = "middle";
+		ctx.fillText("哈哈哈", canvasWidth/2, canvasHeight/2);
+		
+	</script>
+</html>

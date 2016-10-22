@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>canvas</title>
+		<style type="text/css">
+			
+			#canvas{
+				border: 1px solid #943;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="500" height="500">
+			<p>您的浏览器不支持canvas，请更新最新版本的浏览器</p>
+		</canvas>
+		
+	</body>
+	<script type="text/javascript">
+		
+		// 获取元素
+		var canvas = document.getElementById("canvas");
+		
+		// 获取上下文对象
+		// 获取“画笔”，大多数操作都是使用画笔进行
+		var ctx = canvas.getContext("2d");
+		
+		// 画一条线
+		// 1.开始绘制
+		ctx.beginPath();
+		
+		// 2，放置起始点
+		ctx.moveTo(100, 100);
+		
+		// 3.放置后续的点 (可以写任意多个)
+		ctx.lineTo(200, 200);
+		ctx.lineTo(480, 20);
+		
+		// 4.结束绘制 
+//		ctx.closePath();
+
+		// 设置宽度
+		ctx.lineWidth = 20;
+		// 设置颜色
+		ctx.strokeStyle = "red";
+		// 设置填充颜色
+		ctx.fillStyle = "brown";
+		
+		// 设置线两端为圆角
+		// 在使用lineCap的时候，一定要非常小心closePath
+		ctx.lineCap = "round";
+		// 设置交叉线的交接为圆角
+		ctx.lineJoin = "round";
+		
+// 		// 5.画线
+		ctx.stroke();
+// 		// 6. 填充
+// 		ctx.fill();
+		
+	</script>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			#canvas{
+				border: 1px solid black;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="500" height="500">
+			<p>您的浏览器不支持canvas，请下载最新版本的chrom浏览器，<a href="#">下载地址</a></p>
+		</canvas>
+		
+	</body>
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+		
+//		ctx.quadraticCurveTo(200,200, 400,100)
+		ctx.bezierCurveTo(250,200, 180,0, 50,50);
+		ctx.bezierCurveTo(50,50, 0,70,20,180);
+		ctx.bezierCurveTo(20,180, 50,300, 240,220);
+		
+		ctx.bezierCurveTo(240,220, 0,300, 120,400);
+		ctx.bezierCurveTo(120,400, 200,450, 250,280);
+		
+		ctx.bezierCurveTo(240,280, 300,450, 380,400);
+		ctx.bezierCurveTo(380,400, 500,300, 260,220)
+		
+		ctx.bezierCurveTo(260,220, 450,300, 480,180);
+		ctx.bezierCurveTo(480,180, 500,70, 450,50);
+		ctx.bezierCurveTo(450,50, 320,0, 250,200);
+		
+		ctx.lineWidth = 8;
+		ctx.stroke();
+		
+		// 触须（两个）
+		ctx.beginPath()
+		ctx.bezierCurveTo(250,200, 250,0, 100,20);
+		ctx.stroke();
+		
+		ctx.beginPath()
+		ctx.bezierCurveTo(250,200, 250,0, 400,20);
+		ctx.stroke();
+		
+		// 翅膀的花纹
+		ctx.beginPath()
+		ctx.bezierCurveTo(220,190, 140,80,70,100);
+		ctx.lineWidth = 2;
+		ctx.stroke();
+		ctx.beginPath()
+		ctx.bezierCurveTo(220,200, 140,150,80,180);
+		ctx.stroke();
+		
+		ctx.beginPath();
+		ctx.bezierCurveTo(280,190, 360,80, 430,100);
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.bezierCurveTo(280,200, 360,150, 420,180);
+		ctx.stroke();
+		
+		
+		// 笑脸
+		ctx.beginPath();
+		ctx.arc(250,430,70, 0,Math.PI*2, true);
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.arc(250,430,50, 0,Math.PI, false);
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.arc(230,410,10, 0,Math.PI*2, true);
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.arc(270,410,10, 0,Math.PI*2, true);
+		ctx.stroke();
+	</script>
+</html>

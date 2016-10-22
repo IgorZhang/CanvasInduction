@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#canvas{
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="500" height="500"></canvas>
+		
+	</body>
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+		
+		// 获取canvas的宽度和高度
+		var canvasWidth = canvas.width;
+		var canvasHeight = canvas.height;
+		
+		// 二次贝塞尔曲线
+//		ctx.moveTo(500,0)
+//		// 画曲线
+//		ctx.quadraticCurveTo(0,250, 500,500);
+//		ctx.stroke();
+		
+		
+		// 三次贝塞尔
+		ctx.beginPath()
+		ctx.moveTo(0,0)
+		ctx.bezierCurveTo(500,0, 0,500, 500,500);
+		ctx.lineWidth = 20;
+		ctx.fillStyle = "palevioletred"
+		ctx.fill()
+		ctx.strokeStyle= "cadetblue";
+		ctx.stroke();
+		
+		ctx.beginPath()
+		ctx.moveTo(0,0)
+		ctx.bezierCurveTo(0,500, 500,0, 500,500);
+		ctx.fill()
+		ctx.stroke();
+
+		
+		ctx.beginPath()
+		ctx.moveTo(500,0)
+		ctx.bezierCurveTo(0,0, 500,500, 0,500);
+		ctx.fill()
+		ctx.stroke();
+
+		
+		ctx.beginPath()
+		ctx.moveTo(500,0)
+		ctx.bezierCurveTo(500,500, 0,0, 0,500);
+		ctx.fill()
+		ctx.stroke();
+		
+	
+		
+	</script>
+</html>

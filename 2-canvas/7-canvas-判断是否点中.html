@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#canvas{
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="500" height="500"></canvas>
+		
+	</body>
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+		
+		// 获取canvas的宽度和高度
+		var canvasWidth = canvas.width;
+		var canvasHeight = canvas.height;
+		
+		ctx.beginPath();
+		ctx.moveTo(100,100);
+		ctx.lineTo(400,400);
+		ctx.lineTo(100,400);
+		ctx.closePath();
+		
+		ctx.lineWidth = 10;
+		ctx.strokeStyle = "red";
+		ctx.stroke();
+		
+		// 给canvas绑定事件
+		canvas.onclick = function (e) {
+			var x = e.clientX - this.offsetLeft;
+			var y = e.clientY - this.offsetTop;
+			
+			// 判断是否点中了边框
+			if (ctx.isPointInStroke(x, y)) {
+				alert("点中了边框");
+			}
+			
+			// 判断是否点中了区域内容
+			if (ctx.isPointInPath(x, y)) {
+				alert("点中了内部区域");
+			}
+		};
+		
+	
+		
+	</script>
+</html>

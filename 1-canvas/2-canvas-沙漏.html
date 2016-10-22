@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>canvas</title>
+		<style type="text/css">
+			
+			#canvas{
+				border: 1px solid #943;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="500" height="500">
+			<p>您的浏览器不支持canvas，请更新最新版本的浏览器</p>
+		</canvas>
+		
+	</body>
+	<script type="text/javascript">
+		
+		// 获取元素
+		var canvas = document.getElementById("canvas");
+		
+		// 获取上下文对象
+		// 获取“画笔”，大多数操作都是使用画笔进行
+		var ctx = canvas.getContext("2d");
+		
+		// 开始绘制
+		ctx.beginPath();
+		
+		// 画第一个点
+		ctx.moveTo(100, 100);
+		
+		// 画接下来的点
+		ctx.lineTo(400, 100);
+		ctx.lineTo(250, 250);
+		
+		ctx.fillStyle = "black";
+		
+		ctx.fill();
+		
+		ctx.beginPath();
+		
+		ctx.moveTo(250, 250);
+		ctx.lineTo(100, 400);
+		ctx.lineTo(400, 400);
+		
+		ctx.fillStyle = "red";
+		ctx.fill();
+		
+	</script>
+</html>

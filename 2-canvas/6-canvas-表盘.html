@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#canvas{
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="canvas" width="500" height="500"></canvas>
+		
+	</body>
+	<script type="text/javascript">
+		
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+		
+		// 获取canvas的宽度和高度
+		var canvasWidth = canvas.width;
+		var canvasHeight = canvas.height;
+		
+		
+		
+		ctx.translate(canvasWidth/2, canvasHeight/2);
+		ctx.lineCap = "round";
+			ctx.lineWidth = 10;
+		for(var i = 0; i < 12; i++) {
+			ctx.beginPath();
+			ctx.moveTo(0,-200);
+			ctx.lineTo(0, -180);
+			ctx.stroke();
+			ctx.rotate(Math.PI / 6);
+			
+		}
+		
+		
+	
+		
+	</script>
+</html>
